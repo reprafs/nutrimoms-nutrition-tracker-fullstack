@@ -13,12 +13,7 @@ NutriMoms: mobile-first web app for tracking daily food intake and nutrition, bu
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/AJAX-0769AD" alt="AJAX">
-  <img src="https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white" alt="PHP">
-  <img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white" alt="MySQL">
+  <sub>Built with HTML, CSS, JavaScript (AJAX), PHP, and MySQL</sub>
 </p>
 
 > **Status:** Prototype. Development was stopped because the project period ended.
@@ -125,26 +120,43 @@ A subscription plan page designed to explain the benefits of each plan clearly. 
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | HTML5, CSS3, JavaScript (vanilla) |
-| Data fetching | AJAX (asynchronous requests without page reload) |
-| Backend | PHP (PDO, session-based authentication) |
-| Database | MySQL |
-| Charts | SVG-based charts |
+**Frontend**
+- HTML5 and CSS3 for structure and a mobile-first, responsive layout
+- JavaScript (vanilla, no framework) for interactivity
+- AJAX (Fetch) to load and save data without reloading the page, for example updating total calories right after a food entry changes
+- SVG for the charts (weight tracking and nutrition reports)
 
+**Backend**
+- PHP with PDO for database access (prepared statements)
+- Session-based authentication for login and registration
+- Separate API endpoints (`api/` and `ajax/`) that return data to the frontend
+
+**Database**
+- MySQL, managed with phpMyAdmin
+- Designed in these steps:
+  1. Identified the main entities: users, profiles, food items, food logs, weight records, notifications, and articles
+  2. Created the tables with primary keys and foreign keys to define relationships
+  3. Used a `profiles` table as an intermediary to support multiple family members under one account
+  4. Checked the relationships visually with the phpMyAdmin Designer (see the ERD above)
+
+**Tools**
+- XAMPP (Apache + MySQL) as the local development server
+- phpMyAdmin for database management
+- Git and GitHub for version control
 ---
 
 ## Database
 
 The database uses a `profiles` table as an intermediary between a user account and the people being tracked, which makes the multi-profile feature possible.
 
-The database structure is available in [`database/nutrimoms.sql`](database/nutrimoms.sql) (structure only, no personal data).
+The database structure is available in [`nutrimoms_db.sql`](nutrimoms_db.sql) (structure only, no personal data).
 
-<!-- Optional: add an ERD image
-![ERD](images/erd.png)
--->
+![Database Design (ERD)](images/erd.png)
 
+**Main relationships:**
+- One **user** can have many **profiles**
+- Each **profile** has its own food logs, weight records, and notifications
+- Each food log is grouped by meal time (breakfast, lunch, dinner, snack)
 ---
 
 ## Project Structure
