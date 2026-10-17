@@ -1,0 +1,15 @@
+{
+  "name": "NutriMoms",
+  "short_name": "NutriMoms",
+  "start_url": "/nutrimoms/index.php",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/nutrimoms/assets/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
