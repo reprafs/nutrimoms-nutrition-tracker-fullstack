@@ -2,7 +2,7 @@
 NutriMoms: mobile-first web app for tracking daily food intake and nutrition, built end-to-end as a solo university project (PHP, MySQL)
 
 <p align="center">
-  <img src="images/banner.png" alt="NutriMoms Banner" width="100%">
+  <img src="images/banner.PNG" alt="NutriMoms Banner" width="100%">
 </p>
 
 <h1 align="center">NutriMoms</h1>
